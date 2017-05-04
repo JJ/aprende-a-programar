@@ -11,11 +11,14 @@ func main() {
 			req *http.Request) {
 			fmt.Fprintln( res, `<html>
   <head><title>Página</title>
-   <script>console.log('Cargada')</script>
+   <script>console.log('☒ Cargada')</script>
   </head>
   <body><h1>Cargada</h1></body>
 </html>`)
 		})
-	err := http.ListenAndServe(":50403", nil)
+	ε := http.ListenAndServe(":50403", nil)
+	if ε != nil {
+		panic( ε )
+	}
 }
 
