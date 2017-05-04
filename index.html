@@ -148,10 +148,13 @@ title='o dejas el ordenador o lo tiro a la basura'>
 	      "juegos del lenguaje" trata de poner de manifiesto que
 	      un lenguaje es parte de una forma de vida, a la que le
 	      da significado.</aside>
+	  </section>
 	</section>
 
+	  <!-- Nuevas propuestas -->
 	<section>
-	  <section><h3><a href='code/hey.go'>Poliglotismo</a></h3>
+	  <section>
+	    <h3><a href="code/hey.go">Poliglotismo</a></h3>
 	    <pre class='small'><code>package main
 import (
 	"fmt"
@@ -169,16 +172,44 @@ func main() {
 	}
 }
 </code></pre>
-
 	  </section>
+	  
 	  <section 
-    data-background='https://farm6.staticflickr.com/5012/5531870507_a84825ca62_b_d.jpg'
-	     alt='disparando'><h3>Ejecutando</h3 >
+	     data-background='https://farm6.staticflickr.com/5012/5531870507_a84825ca62_b_d.jpg'
+	     alt='disparando'>
+	    <h3>Ejecutando</h3>
 	    <pre><code>go run code/hey.go &</code></pre>
 
 	    <img class='fragment' src='img/go-cargada.png' style='width:90%;height:300px;margin-left:auto;margin-right:auto' alt='cargada'>
 	  </section>
+
+	  <section>
+	    <h3><a href='code/hey-env.go'>Entorno</a></h3>
+	    <pre class='small'><code>package main
+import (
+	"fmt"
+	"net/http"
+	"os"
+)
+func main() {
+	http.HandleFunc("/",
+		func (res http.ResponseWriter, req *http.Request) {
+			fmt.Fprintln( res, `&lt;html>...&lt;/body>&lt;/html>`)
+		})
+	ε := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
+	if ε != nil { panic( ε ) }
+}
+	    </code></pre>
+
+	  </section>
+
 	</section>
+
+	<!-- Conclusiones -->
+	<section>
+	  <h1>Concluyendo</h1>
+	</section>
+	
 	<!-- Créditos -->
 	<section>
 	  <h2>Créditos</h2>
