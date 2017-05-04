@@ -155,7 +155,17 @@ alt='otra consola del año de la polca'>
 	  <section data-background='img/helloworld-java-cosas.jpg'
 		   alt='Qué realidad'></section>
 
-	  <section data-background='img/perl6.jpg' alt='La	realidad de Perl'></section>
+	  <section data-background='img/perl6.jpg' title='La realidad de
+		   Perl'>
+	    <aside class='notes'>Entre otras cosas, lo importante es
+		   ver que para aprender a programar no hace falta
+		   completar un programa. La mayoría de los lenguajes
+		   interpretados, y algunos compilados, tienen un REPL
+		   desde el que se pueden evaluar expresiones, guardar
+		   en variables resultados y hacer un montón de
+	      cosas. Hasta los navegadores tienen REPL</aside>
+
+	  </section>
 	</section>
 
 	  <!-- Nuevas propuestas -->
@@ -181,20 +191,32 @@ func main() {
 </code></pre>
 	  </section>
 
-	  <section><img src='img/go.jpg'
-	  style='height:700px' alt='go comentado'>
-	  </section>
-
 	  <section
 	     data-background='https://farm6.staticflickr.com/5012/5531870507_a84825ca62_b_d.jpg'
 	     alt='disparando'>
 	    <h3>Ejecutando</h3>
 	    <pre><code>go run code/hey.go &</code></pre>
 
-	    <img class='fragment' src='img/go-cargada.png' style='width:90%;height:300px;margin-left:auto;margin-right:auto' alt='cargada'>
+	    <img class='fragment' src='img/go-cargada.png' style='height:400px;margin-left:auto;margin-right:auto' alt='cargada'>
 	  </section>
 
-	  <section>
+	  <section><img src='img/go.jpg' style='height:800px' alt='go comentado'>
+	  </section>
+
+	  <section
+	    data-background='https://farm9.staticflickr.com/8354/8343400562_04b4b3854e_h_d.jpg'
+	    alt='más moderno'>
+	    <h3>Encuentra el lenguaje</h3>
+	    <h3>1. Go</h3>
+	    <h3 class='fragment'>2. HTML</h3>
+	    <h3 class='fragment'>3. JavaScript</h3>
+	    <h3 class='fragment'>4. HTTP DSL</h3>
+	    <h3 class='fragment'>5. <em>Toolchain</em> DSL</h3>
+	  </section>
+	  
+	  <section
+	    data-background='https://farm9.staticflickr.com/8381/8468769626_cb2868e1c9_k_d.jpg'
+	    title='entorno múltiple'>
 	    <h3><a href='code/hey-env.go'>Entorno</a></h3>
 	    <pre class='small'><code>package main
 import (
@@ -212,6 +234,32 @@ func main() {
 }
 	    </code></pre>
 
+	    <aside class='notes'>Trabajar con variables de entorno es
+	  una buena práctica que se usa, por ejemplo, para despliegues
+	  en la nube de forma segura. Permite, además, definir las
+	  entradas una sola vez, sin tener que repetirlas cada vez que
+	  se ejecute. Es un ejemplo de cosas que no se suelen cubrir
+	  con el "Hola mundo": trabajar con el entorno y que, sin
+	      embargo, resultan imprescindibles</aside>
+	  </section>
+
+	  <section>
+	    <img src='img/prueba-go.png' title='Testeando go'>
+	  </section>
+
+	  <section><h1><a href='code/hey/hey_test.go'>Go test!</a></h1>
+	    <pre class='small'><code>package main
+import (
+	"testing"
+	"strings"
+)
+func TestPage(t *testing.T) {
+	page := MainPage() 
+	if strings.LastIndex(page, "<") < 0 {
+		t.Error("Estructura incorrecta")
+	}
+}</code></pre>
+	    <img src='img/test-go.png' alt='Testeando go' title='Tests de go'>
 	  </section>
 
 	</section>
@@ -250,7 +298,13 @@ func main() {
 	      clerk</em> by Expert Infantry</a></li>
 	    <li><a
 	href='https://www.flickr.com/photos/fdaphotos/7421971396/'>Early
-	      NCTR Computer System Terminal- 1973</a> de la US FDA</li>
+	      NCTR Computer System Terminal- 1973</a> de la US
+	      FDA</li>
+	    <li>bw hacked by <a
+	      href='https://www.flickr.com/photos/ajturner/8343400562/'>Andrew
+	      Turner</a></li>
+	    <li>Teclados de <a
+	      href='https://www.flickr.com/photos/seeminglee/8468769626/'>See-ming Lee</a></li>
 	  </ul>
 	</section>
       </div>
