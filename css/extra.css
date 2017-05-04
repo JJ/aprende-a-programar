@@ -48,7 +48,10 @@ section[data-background] blockquote {
     column-count: 2;
 }
 .credits li { font-size:0.75em }
-
+.small code {
+    font-size: 0.75em;
+    line-height: 1.1em;
+}
 
 .chart div {
   font: 30px sans-serif;

@@ -95,6 +95,25 @@ title='o dejas el ordenador o lo tiro a la basura'>
 	  </section>
 	</section>
 
+	<section>
+	  <section><h3>Poliglotismo</h3>
+	    <pre class='small'><code>package main
+import (
+	"fmt"
+	"net/http"
+)
+func main() {
+	http.HandleFunc("/", func (res http.ResponseWriter, req *http.Request) {
+			fmt.Fprintln( res, `&lt;html>
+  &lt;head>&lt;title>Página&lt;/title>&lt;script>console.log('Cargada')&lt;/script>&lt;/head>
+  &lt;body>&lt;h1>Cargada&lt;/h1>&lt;/body>&lt;/html>`)
+		})
+	err := http.ListenAndServe(":50403", nil)
+}
+</code></pre>
+
+	</section>
+
 	<!-- Créditos -->
 	<section>
 	  <h2>Créditos</h2>
